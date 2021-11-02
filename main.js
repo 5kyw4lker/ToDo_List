@@ -30,7 +30,7 @@ set_current_time();
 // Aktuelles Datum für new_Todo
 date_new_todo = current_date.getFullYear().toString() + '-' + (current_date.getMonth() + 1).toString().padStart(2, 0) +
     '-' + current_date.getDate().toString().padStart(2, 0);
-document.querySelector("#todo-date").setAttribute("value", date_new_todo);
+// document.querySelector("#todo-date").setAttribute("value", date_new_todo);
 
 
 // min-Datum für new_Todo
@@ -45,7 +45,7 @@ if(mm<10){
   mm='0'+mm
 } 
 today = yyyy+'-'+mm+'-'+dd;
-document.getElementById("todo-date").setAttribute("min", today);
+// document.getElementById("todo-date").setAttribute("min", today);
 
 
 
