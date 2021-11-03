@@ -6,9 +6,9 @@
 html body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100vmax;
     background: linear-gradient(183deg, #376b97, #399997, #359275, #8a8f35, #a04e32);
-    background-size: 3000% 3000%;
+    background-size: 200% 200%;
     -webkit-animation: background_gradient 259s ease infinite;
     -moz-animation: background_gradient 259s ease infinite;
     animation: background_gradient 259s ease infinite;
@@ -61,12 +61,20 @@ html body {
     height: 2rem;
 }
 
-#todo-date {
-    width: 20%;
-    border: none;
-    border-radius: 0.3rem;
+.todo-input {
+    width: 40%;
+    border: 0.1rem black solid;
+    border-radius: 0.2rem;
     font-size: 0.7rem;
-    background: transparent;
+    background-color: transparent;
+}
+
+.date-of-todo {
+    width: 30%;
+    border: 0.1rem black solid;
+    border-radius: 0.2rem;
+    font-size: 0.7rem;
+    background-color: transparent;    
 }
 
 #plus-img {
@@ -74,8 +82,22 @@ html body {
     margin-right: 5%;
 }
 
-#rectangle, #trash {
-    width: 3rem;
+.container {
+    margin-bottom: 3vmin;
+}
+
+.todo-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#square {
+    height: 1.8rem;
+}
+
+#trash {
+    height: 2rem;
 }
 
 
