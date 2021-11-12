@@ -49,6 +49,8 @@ today = yyyy+'-'+mm+'-'+dd;
 
 
 
+const eintrag1 = new Eintrag();
+
 
 
 

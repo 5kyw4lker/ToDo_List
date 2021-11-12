@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./src/css/style.css">
 
     <title>ToDo List</title>
 
@@ -19,8 +19,8 @@
 
     <form id="new-todo-container">
         <input type="text" id="new-todo" placeholder="neuer Eintrag...">
-        <img src="img/calendar_white.png" id="set-date" alt="calender">     <!-- https://demo.mobiscroll.com/javascript/calendar/date-picker -->
-        <img src="img/plus.PNG" id="plus-img" alt="add">
+        <img src="src/img/calendar_white.png" id="set-date" alt="calender">     <!-- https://demo.mobiscroll.com/javascript/calendar/date-picker -->
+        <img src="src/img/plus.PNG" id="plus-img" alt="add">
     </form>
 
     <div id="todos-container">
@@ -30,11 +30,11 @@
 
             <!-- insert todos here -->
             <form class="todo-form">
-                <img src="img/square.PNG" id="square" alt="done">                 
+                <img src="src/img/square.PNG" id="square" alt="done">                 
                 <input type="text" class="todo-input"> 
                 <input type="date" class="date-of-todo">
-                <img src="img/trash.PNG" id="trash" alt="delete">   
-                </button>
+                <img src="src/img/trash.PNG" id="trash" alt="delete">   
+
             </form>
         </div>
 
@@ -43,11 +43,11 @@
 
             <!-- insert todos here -->
             <form class="todo-form">
-                <img src="img/square.PNG" id="square" alt="done">                 
+                <img src="src/img/square.PNG" id="square" alt="done">                 
                 <input type="text" class="todo-input">
                 <input type="date" class="date-of-todo">
-                <img src="img/trash.PNG" id="trash" alt="delete">   
-                </button>
+                <img src="src/img/trash.PNG" id="trash" alt="delete">   
+
             </form>
         </div>
 
@@ -55,11 +55,11 @@
             <div id="tomorrow">Morgen</div>
 
             <form class="todo-form">
-                <img src="img/square.PNG" id="square" alt="done">                 
+                <img src="src/img/square.PNG" id="square" alt="done">                 
                 <input type="text" class="todo-input">
                 <input type="date" class="date-of-todo">
-                <img src="img/trash.PNG" id="trash" alt="delete">   
-                </button>
+                <img src="src/img/trash.PNG" id="trash" alt="delete">   
+
             </form>
         </div>
 
@@ -67,17 +67,18 @@
             <div id="later">Später</div>
 
             <form class="todo-form">
-                <img src="img/square.PNG" id="square" alt="done">                 
+                <img src="src/img/square.PNG" id="square" alt="done">                 
                 <input type="text" class="todo-input"> 
                 <input type="date" class="date-of-todo">
-                <img src="img/trash.PNG" id="trash" alt="delete">   
-                </button>
+                <img src="src/img/trash.PNG" id="trash" alt="delete">   
+
             </form>
         </div>
  
     </div>
 
-    <script src="main.js" defer></script>
+    <script src="./src/js/main.js" defer></script>
+    <script src="./src/js/classes/Eintrag.js" defer></script>
 
 </body>
 </html>
