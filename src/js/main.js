@@ -46,24 +46,3 @@ if(mm<10){
 } 
 today = yyyy+'-'+mm+'-'+dd;
 // document.getElementById("todo-date").setAttribute("min", today);
-
-
-
-const eintrag1 = new Eintrag();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -2,20 +2,20 @@
 
 class Eintrag {
 
-    // constructor(todo, datum) {
-    //     this._todo = todo;
-    //     this._datum = datum;
-    // }
+    constructor(todo, datum) {
+        this._todo = todo;
+        this._datum = datum;
+    }
 
     // Todo-Eintrag erstellen
     html_generieren() {
 
         let gesamteintrag = document.createElement("div");
-        gesamteintrag.setAttribute("id", "***FunktionFuerRichtigen()***-text");
+        gesamteintrag.setAttribute("id", "TEST-text_div1");
         gesamteintrag.setAttribute("class", "container");
 
         let eintrag = document.createElement("div");
-        eintrag.setAttribute("id", "***FunktionFuerRichtigen()***-text");
+        eintrag.setAttribute("id", "TEST-text-div2");
 
         let form = document.createElement("form");
         form.setAttribute("class", "todo-form");
@@ -28,51 +28,36 @@ class Eintrag {
         let input_todo = document.createElement("input");
         input_todo.setAttribute("type", "text");
         input_todo.setAttribute("class", "todo-input");
+        input_todo.setAttribute("value", this._todo);
 
         let input_date = document.createElement("input");
         input_date.setAttribute("type", "date");
         input_date.setAttribute("class", "date-of-todo");
+        input_date.setAttribute("value", this._datum);
   
         let img_trash = document.createElement("img");
         img_trash.setAttribute("src", "src/img/trash.PNG");
         img_trash.setAttribute("id", "trash");
         img_trash.setAttribute("alt", "delete");
 
+
         gesamteintrag.insertAdjacentElement("afterbegin", eintrag);
         gesamteintrag.insertAdjacentElement("beforeend", form);
         form.insertAdjacentElement("beforeend", img_square);
         form.insertAdjacentElement("beforeend", input_todo);
         form.insertAdjacentElement("beforeend", input_date);
-        form.insertAdjacentElement("beforeend", img_trash);
+        form.insertAdjacentElement("beforeend", img_trash); 
 
         return gesamteintrag;
 
     }
-
-    // _eintragsposition_ermitteln() {
-
-    //     let heute = new Date();
-    //     console.log(heute);
-
-    //     if (Date.now() < datum) {
-    //         id_text_main_container = "overdue-container";
-    //         id_text_eintrags_container = "overdue";
-    //         html_text = "Überfällig";
-    //     }
-    //     if (Date.now() < datum) {
-    //         id_text_main_container = "overdue-container";
-    //         id_text_eintrags_container = "overdue";
-    //         html_text = "Überfällig";
-    //     }
-
-    //     "today-container" class="container">
-    //     <div id="today">Heute<
-
-
-    // }
-
 }
 
 
+let site = document.querySelector("#todos-container");
+console.log(site);
 
+const eintrag1 = new Eintrag("1.Eintrag", "02.08.2021");
+let inhalt1 = eintrag1.html_generieren();
 
+site.insertAdjacentElement("afterbegin", inhalt1);
