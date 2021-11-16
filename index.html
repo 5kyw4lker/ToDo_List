@@ -7,6 +7,10 @@
 
     <link rel="stylesheet" href="./src/css/style.css">
 
+    <!-- Fuer Datumpicker (https://flatpickr.js.org/getting-started/) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+
     <title>ToDo List</title>
 
 </head>
@@ -19,7 +23,8 @@
 
     <form id="new-todo-container">
         <input type="text" id="new-todo" placeholder="neuer Eintrag...">
-        <img src="src/img/calendar_white.png" id="set-date" alt="calender">     <!-- https://demo.mobiscroll.com/javascript/calendar/date-picker -->
+        <input type="date" placeholder="Datum..." id="set-date">
+        <!-- <img src="src/img/calendar_white.png" id="set-date" alt="calender"> -->
         <img src="src/img/plus.PNG" id="plus-img" alt="add">
     </form>
 
@@ -76,6 +81,7 @@
         </div>
  
     </div>
+
 
     <script src="./src/js/classes/Eintrag.js" defer></script>   
     <script src="./src/js/main.js" defer></script>

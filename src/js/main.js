@@ -46,3 +46,35 @@ if(mm<10){
 } 
 today = yyyy+'-'+mm+'-'+dd;
 // document.getElementById("todo-date").setAttribute("min", today);
+
+
+
+// Todo-Eintrag reset
+function reset_todo_native() {
+  let todo_input = document.getElementById('new-todo');
+
+  //erase the input value
+  todo_input.value = '';
+
+  //prevent error on older browsers (aka IE8)
+  if (todo_input.type === 'text') {
+    //update the input content (visually)
+    todo_input.type = 'date';
+    todo_input.type = 'text';
+  }
+}
+
+// Todo-Datum reset
+function reset_date_native() {
+  let date_input = document.getElementById('set-date');
+
+  //erase the input value
+  date_input.value = '';
+
+  //prevent error on older browsers (aka IE8)
+  if (date_input.type === 'date') {
+    //update the input content (visually)
+    date_input.type = 'text';
+    date_input.type = 'date';
+  }
+}

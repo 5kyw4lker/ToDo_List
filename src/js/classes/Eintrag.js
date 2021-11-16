@@ -40,7 +40,6 @@ class Eintrag {
         img_trash.setAttribute("id", "trash");
         img_trash.setAttribute("alt", "delete");
 
-
         gesamteintrag.insertAdjacentElement("afterbegin", eintrag);
         gesamteintrag.insertAdjacentElement("beforeend", form);
         form.insertAdjacentElement("beforeend", img_square);
@@ -51,13 +50,55 @@ class Eintrag {
         return gesamteintrag;
 
     }
-}
+} // Ende Class Eintrag
+
+
+// Add Todo-Eintrag + Todo-Datum
+let todo_eintrag;
+let todo_datum;
+let id_text;
+
+let add_button = document.querySelector("#plus-img");
+
+add_button.addEventListener("click", function() {
+  
+    todo_eintrag = document.querySelector("#new-todo").value;
+    todo_datum = document.querySelector("#set-date").value;
+
+    let todo_vergleichsdatum = new Date(todo_datum = document.querySelector("#set-date").value);
+    let akt_datum = new Date();
+
+    if (    todo_vergleichsdatum.getFullYear() === akt_datum.getFullYear() &&
+            todo_vergleichsdatum.getMonth() === akt_datum.getMonth() &&
+            todo_vergleichsdatum.getDate() === akt_datum.getDate()         
+        ) {console.log("heute");
+           // id_text = "today-container"; // heute     
+        } else if (todo_vergleichsdatum < akt_datum) {
+            console.log("überfällig");
+            // id_text = "overdue-container"; // überfällig 
+            } else if ( todo_vergleichsdatum.getFullYear() === akt_datum.getFullYear() &&
+                        todo_vergleichsdatum.getMonth() === akt_datum.getMonth() &&
+                        todo_vergleichsdatum.getDate() === akt_datum.getDate() + 1     
+                    ) {
+                        console.log("moregen");
+                        // id_text = "tomorrow-container"; // morgen
+                } else if (todo_vergleichsdatum > akt_datum) {
+                    console.log("Todo noch offen");
+                    // id_text = "later-container"; // später
+                }
+
+const eintrag1 = new Eintrag(todo_eintrag, todo_datum);
+let inhalt1 = eintrag1.html_generieren();
+
+site.insertAdjacentElement("afterbegin", inhalt1);
+
+reset_todo_native()
+reset_date_native()
+
+});
 
 
 let site = document.querySelector("#todos-container");
 console.log(site);
 
-const eintrag1 = new Eintrag("1.Eintrag", "02.08.2021");
-let inhalt1 = eintrag1.html_generieren();
 
-site.insertAdjacentElement("afterbegin", inhalt1);

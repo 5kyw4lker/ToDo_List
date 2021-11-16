@@ -5,7 +5,7 @@
 
 html body {
     margin: 0;
-    padding: 0;
+    padding: 3%;
     height: 100vmax;
     background: linear-gradient(183deg, #376b97, #399997, #359275, #8a8f35, #a04e32);
     background-size: 200% 200%;
@@ -46,7 +46,7 @@ html body {
 
 #new-todo-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 3vmin;
 }
 
@@ -58,7 +58,11 @@ html body {
 }
 
 #set-date {
+    width: 30%;
     height: 2rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: smaller;   /* ################# */
 }
 
 .todo-input {
@@ -79,7 +83,6 @@ html body {
 
 #plus-img {
     height: 1.5rem;
-    margin-right: 5%;
 }
 
 .container {
