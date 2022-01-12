@@ -71,26 +71,34 @@ add_button.addEventListener("click", function() {
     if (    todo_vergleichsdatum.getFullYear() === akt_datum.getFullYear() &&
             todo_vergleichsdatum.getMonth() === akt_datum.getMonth() &&
             todo_vergleichsdatum.getDate() === akt_datum.getDate()         
-        ) {console.log("heute");
-           // id_text = "today-container"; // heute     
+        ) {id_text = "heute";     
         } else if (todo_vergleichsdatum < akt_datum) {
-            console.log("überfällig");
-            // id_text = "overdue-container"; // überfällig 
+            id_text = "overdue-container"; 
             } else if ( todo_vergleichsdatum.getFullYear() === akt_datum.getFullYear() &&
                         todo_vergleichsdatum.getMonth() === akt_datum.getMonth() &&
                         todo_vergleichsdatum.getDate() === akt_datum.getDate() + 1     
-                    ) {
-                        console.log("moregen");
-                        // id_text = "tomorrow-container"; // morgen
+                    ) {id_text = "tomorrow-container";
                 } else if (todo_vergleichsdatum > akt_datum) {
-                    console.log("Todo noch offen");
-                    // id_text = "later-container"; // später
+                    id_text = "later-container";
                 }
 
 const eintrag1 = new Eintrag(todo_eintrag, todo_datum);
 let inhalt1 = eintrag1.html_generieren();
 
-site.insertAdjacentElement("afterbegin", inhalt1);
+
+if(id_text === "heute") {
+    let site = document.querySelector("#today");
+    site.insertAdjacentElement("afterend", inhalt1);
+} else if (id_text === "tomorrow-container") {
+    let site = document.querySelector("#tomorrow");
+    site.insertAdjacentElement("afterend", inhalt1);
+} else if (id_text === "later-container") {
+    let site = document.querySelector("#later");
+    site.insertAdjacentElement("afterend", inhalt1);
+} else if (id_text === "overdue-container") {
+    let site = document.querySelector("#overdue");
+    site.insertAdjacentElement("afterend", inhalt1);
+}
 
 reset_todo_native()
 reset_date_native()
@@ -98,7 +106,6 @@ reset_date_native()
 });
 
 
-let site = document.querySelector("#todos-container");
-console.log(site);
+
 
 
